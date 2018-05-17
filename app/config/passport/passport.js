@@ -73,7 +73,7 @@ module.exports = function(passport, user) {
         var User = user;
         var isValidPassword = function(userpass, password) {
             return bCrypt.compareSync(password, userpass);
-        }
+        };
 
         User.findOne({
             where: {
@@ -91,7 +91,7 @@ module.exports = function(passport, user) {
                 });
             }
             var userInfo = user.get();
-            return done(null, userinfo);
+            return done(null, userInfo);
         }).catch(function(err) {
             console.log("Error:", err);
             return done(null, false, {
